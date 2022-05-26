@@ -127,26 +127,22 @@ const Projects = ({ projects }) => {
                     >
                       {project.description}
                       <div className="flex my-2 w-full justify-between">
-                        {/* {project.link && (
-                          <a href={product.link}>
-                            <button
-                              className="px-2 dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
-                              onClick={() => router.push(`${project.link}`)}
-                            >
-                              visit site
-                            </button>
-                          </a>
-                        )} */}
-                        {project.source && (
-                          <a href={product.source}>
-                            <button
-                              className="px-2  dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
-                              onClick={() => router.push(`${project.source}`)}
-                            >
-                              source code
-                            </button>
-                          </a>
-                        )}
+                        <a href={project.link}>
+                          <button
+                            className="px-2 dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
+                            onClick={() => router.push(`${project.link}`)}
+                          >
+                            visit site
+                          </button>
+                        </a>
+                        <a href={project.source}>
+                          <button
+                            className="px-2  dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
+                            onClick={() => router.push(`${project.source}`)}
+                          >
+                            source code
+                          </button>
+                        </a>
                       </div>
                     </ShowMoreText>
                   </div>
