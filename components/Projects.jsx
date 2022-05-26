@@ -83,7 +83,7 @@ const Projects = ({ projects }) => {
             >
               <motion.div>
                 <div
-                  key={project.image}
+                  key={project.id}
                   className="sm:min-w-fit sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75"
                 >
                   <div className="h-[200px] flex items-center justify-center">
@@ -136,7 +136,7 @@ const Projects = ({ projects }) => {
                               visit site
                             </button>
                           </a>
-                        )}
+                        )} */}
                         {project.source && (
                           <a href={product.source}>
                             <button
@@ -146,7 +146,7 @@ const Projects = ({ projects }) => {
                               source code
                             </button>
                           </a>
-                        )} */}
+                        )}
                       </div>
                     </ShowMoreText>
                   </div>
