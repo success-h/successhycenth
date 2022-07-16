@@ -22,7 +22,7 @@ const Contact = ({ contact }) => {
               <Image
                 height={30}
                 width={30}
-                src={item.icon}
+                src={item?.icon}
                 alt="icons"
                 priority
               />

@@ -78,7 +78,7 @@ export const About = ({ about }) => {
               >
                 <motion.img
                   className="w-[200px] h-[200px]"
-                  src={`${item.icon}.svg`}
+                  src={item?.icon}
                   alt={item.name}
                 />
                 <div className="flex sm:w-3/5 md:w-full p-2 dark:text-gray-300 self-center flex-col">

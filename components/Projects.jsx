@@ -88,7 +88,7 @@ const Projects = ({ projects }) => {
                 >
                   <div className="h-[200px] flex items-center justify-center">
                     <motion.img
-                      src={project.image}
+                      src={project?.image}
                       className="rounded-lg w-full h-full object-cover object-center"
                       whileHover={{
                         scale: 1.1,
@@ -97,7 +97,7 @@ const Projects = ({ projects }) => {
                           duration: 0.5,
                         },
                       }}
-                      alt={project.name}
+                      alt={project?.name}
                     />
                   </div>
 
