@@ -25,7 +25,6 @@ const Projects = ({ projects }) => {
   const router = useRouter();
   const [element, controls] = useScroll();
   function executeOnClick(isExpanded) {}
-  console.log("projects", projects);
 
   return (
     <motion.div
@@ -86,10 +85,10 @@ const Projects = ({ projects }) => {
                   key={project.id}
                   className="sm:min-w-fit sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75"
                 >
-                  <div className="h-[200px] flex items-center justify-center">
+                  <div className="h-[200px] rounded-xl overflow-hidden flex items-center justify-center">
                     <motion.img
                       src={project?.image}
-                      className="rounded-lg w-full h-full object-cover object-center"
+                      className=" w-full h-full object-cover object-center"
                       whileHover={{
                         scale: 1.1,
                         transition: {
