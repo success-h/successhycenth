@@ -14,7 +14,7 @@ export const Hero = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: -200, opacity: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          transition={{ delay: 0.4, duration: 0.19 }}
           className="text-4xl text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm md:text-start font-bold lg:text-[54px]"
         >
           Hi 👋 I’m Success Hycenth, I’m a full-stack developer and a UI/UX

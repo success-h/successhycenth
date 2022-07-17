@@ -23,7 +23,7 @@ const HeroSvg = ({ className }) => {
       animate={{ x: 0, opacity: 1 }}
       initial={{ x: 200, opacity: 0 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 0.2, duration: 0.4 }}
+      transition={{ delay: 0.2, duration: 0.19 }}
       className={className}
       viewBox="0 0 476 345"
       fill="none"
