@@ -67,7 +67,7 @@ const Technology = ({ technologies }) => {
           className="text-lg text-center dark:text-gray-300  self-center mx-auto"
         >
           Learn more about my skills, these are the core technologies I use in
-          making all these magic happen feel free tp click and learn about them.
+          making all these magic happen feel free to click and learn about them.
           <br />
           <em className="text-xs">
             This website is powered Nextjs | DjangoRestFramework | Tailwinds

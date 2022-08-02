@@ -5,9 +5,11 @@ import { BsSunFill } from "react-icons/bs";
 import { IoReorderTwoOutline } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import Sidebar from "./Sidebar";
+
 const Header = () => {
-  const [menu, setMenu] = useState(false);
+  const genericHamburgerLine = `w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-300`;
   const { systemTheme, theme, setTheme } = useTheme();
+  const [menu, setMenu] = useState(false);
 
   const renderThemeChanger = () => {
     const currentTheme = theme === "system" ? "light" : theme;
@@ -52,10 +54,43 @@ const Header = () => {
       <div className="flex md:hidden z-10 py-5 px-4 items-center dark:backdrop-blur-0 dark:bg-[#11121E] justify-between fixed backdrop-blur-2xl top-0 left-0 right-0">
         <div className="">{renderThemeChanger()}</div>
         <div className="z-10">
-          <IoReorderTwoOutline
+          {/* <IoReorderTwoOutline
             onClick={() => setMenu(!menu)}
             className="text-3xl dark:text-gray-200"
-          />
+          /> */}
+          <div
+            className={`flex flex-col h-9 w-9 rounded justify-center items-center`}
+            onClick={() => setMenu(!menu)}
+          >
+            <div
+              style={{
+                height: "3px",
+              }}
+              className={`${genericHamburgerLine} ${
+                menu
+                  ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
+                  : "opacity-50 group-hover:opacity-100"
+              }`}
+            />
+            <div
+              style={{
+                height: "3px",
+              }}
+              className={`${genericHamburgerLine} ${
+                menu ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+              }`}
+            />
+            <div
+              style={{
+                height: "3px",
+              }}
+              className={`${genericHamburgerLine} ${
+                menu
+                  ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
+                  : "opacity-50 group-hover:opacity-100"
+              }`}
+            />
+          </div>
         </div>
         {menu && <Sidebar menu={menu} setMenu={setMenu} />}
       </div>
