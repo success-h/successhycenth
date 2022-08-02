@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useScroll } from "./useScroll";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -23,7 +24,13 @@ const fadeInUp = {
 };
 
 const Technology = ({ technologies }) => {
-  const [element, controls] = useScroll();
+  const [ref, inView] = useInView();
+  const control = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
   return (
     <div
@@ -34,11 +41,12 @@ const Technology = ({ technologies }) => {
         <motion.span
           initial="hidden"
           variants={fadeInUp}
-          ref={element}
-          animate={controls}
+          animate={control}
+          ref={ref}
           transition={{
             delay: 0.03,
             duration: 0.8,
+            ease: easing,
           }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-3xl my-10 font-bold self-center mx-auto"
@@ -48,17 +56,20 @@ const Technology = ({ technologies }) => {
         <motion.span
           initial="hidden"
           variants={fadeInUp}
-          ref={element}
-          animate={controls}
+          animate={control}
+          ref={ref}
           transition={{
             delay: 0.03,
             duration: 0.8,
+            ease: easing,
           }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-lg text-center dark:text-gray-300  self-center mx-auto"
         >
-          This website is built Nextjs, Django, Tailwinds and these are some
-          modern technologies I use to build products.
+          Learn more about my skills, qualifications and experiences. <br />
+          <em className="text-xs">
+            This website is powered Nextjs | DjangoRestFramework | Tailwinds
+          </em>{" "}
         </motion.span>
       </div>
       <div className="grid sm:grid-rows-3 grid-rows-6 grid-flow-col gap-2   mt-10">
@@ -68,11 +79,12 @@ const Technology = ({ technologies }) => {
               <motion.div
                 initial="hidden"
                 variants={fadeInUp}
-                ref={element}
-                animate={controls}
+                animate={control}
+                ref={ref}
                 transition={{
                   delay: 0.03,
                   duration: 0.8,
+                  ease: easing,
                 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 key={id}

@@ -1,14 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useScroll } from "./useScroll";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import ShowMoreText from "react-show-more-text";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
 const fadeInUp = {
   hidden: {
-    y: 60,
+    y: 300,
     opacity: 0,
     transition: { duration: 0.7, ease: easing },
   },
@@ -23,14 +24,19 @@ const fadeInUp = {
 };
 const Projects = ({ projects }) => {
   const router = useRouter();
-  const [element, controls] = useScroll();
-  function executeOnClick(isExpanded) {}
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
   return (
     <motion.div
-      ref={element}
-      animate={controls}
-      transition={{ duration: 1 }}
+      ref={ref}
+      animate={control}
+      transition={{ duration: 1.5, ease: easing }}
       id="projects"
       className="max-w-[1440px] dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
     >
@@ -38,11 +44,12 @@ const Projects = ({ projects }) => {
         <motion.span
           initial="hidden"
           variants={fadeInUp}
-          ref={element}
-          animate={controls}
+          animate={control}
+          ref={ref}
           transition={{
             delay: 0.03,
             duration: 0.8,
+            ease: easing,
           }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-3xl my-10 font-bold self-center mx-auto"
@@ -52,11 +59,12 @@ const Projects = ({ projects }) => {
         <motion.div
           initial="hidden"
           variants={fadeInUp}
-          animate={controls}
-          ref={element}
+          animate={control}
+          ref={ref}
           transition={{
-            delay: 0.5,
+            delay: 0.03,
             duration: 0.8,
+            ease: easing,
           }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-lg dark:text-gray-300  text-center self-center mx-auto"
@@ -66,88 +74,81 @@ const Projects = ({ projects }) => {
       </div>
       <div className="my-10">
         <div className="grid md:grid-cols-2 gap-14 px-3 sm:px-10 xl:grid-cols-3 justify-center">
-          {projects.map((project) => (
-            <motion.a
-              ref={element}
-              href={project.link}
+          {projects.map((project, idx) => (
+            <motion.div
               initial="hidden"
               variants={fadeInUp}
-              animate={controls}
-              key={project.name}
+              animate={control}
+              ref={ref}
               transition={{
-                delay: 0.2,
+                delay: 0.03,
                 duration: 0.8,
+                ease: easing,
               }}
               whileInView={{ opacity: 1, y: 0 }}
+              key={project.name}
             >
-              <motion.div>
-                <div
-                  key={project.id}
-                  className="sm:min-w-fit sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75"
-                >
-                  <div className="h-[200px] rounded-xl overflow-hidden flex items-center justify-center">
-                    <motion.img
-                      src={project?.image}
-                      className=" w-full h-full object-cover object-center"
-                      whileHover={{
-                        scale: 1.1,
-                        transition: {
-                          ease: "easeInOut",
-                          duration: 0.5,
-                        },
-                      }}
-                      alt={project?.name}
-                    />
-                  </div>
-
-                  <div className="bg-gray-white grid">
-                    <div className="flex w-full my-2">
-                      {project.tags.map((tag) => (
-                        <div
-                          key={tag.name}
-                          className="px-2 mx-2 py-1 dark:bg-rose-500 text-xs my-1 rounded-full bg-gray-400"
-                        >
-                          {tag.name}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-start dark:text-gray-100  text-lg font-bold py-2">
-                      {project.name}
-                    </div>
-                    <ShowMoreText
-                      lines={2}
-                      more="Show more"
-                      less="Show less"
-                      className="content-css"
-                      anchorClass="my-anchor-css-class"
-                      onClick={executeOnClick}
-                      expanded={false}
-                      truncatedEndingComponent={"... "}
-                    >
-                      {project.description}
-                      <div className="flex my-2 w-full justify-between">
-                        <a href={project.link}>
-                          <button
-                            className="px-2 dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
-                            onClick={() => router.push(`${project.link}`)}
-                          >
-                            visit site
-                          </button>
-                        </a>
-                        <a href={project.source}>
-                          <button
-                            className="px-2  dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
-                            onClick={() => router.push(`${project.source}`)}
-                          >
-                            source code
-                          </button>
-                        </a>
-                      </div>
-                    </ShowMoreText>
-                  </div>
+              <div
+                key={idx}
+                className="sm:min-w-fit hover:shadow-lg border sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75"
+              >
+                <div className="h-[200px] rounded-xl grid">
+                  <Image
+                    src={project.image}
+                    height={200}
+                    width={400}
+                    objectFit="cover"
+                    className="hover:scale-110 transition ease-in-out duration-300 transform cursor-pointer"
+                    alt={project?.name}
+                  />
                 </div>
-              </motion.div>
-            </motion.a>
+
+                <div className="bg-gray-white grid px-3 py-3">
+                  <div className="flex w-full my-2">
+                    {project.tags.map((tag) => (
+                      <div
+                        key={tag.name}
+                        className="px-2 mx-2 py-1 dark:bg-gray-500 text-[9px] my-1 rounded-full bg-gray-200"
+                      >
+                        {tag.name}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-start dark:text-gray-100  text-lg font-bold py-2">
+                    {project.name}
+                  </div>
+                  <ShowMoreText
+                    lines={2}
+                    more="Show more"
+                    less="Show less"
+                    className="content-css"
+                    anchorClass="my-anchor-css-class"
+                    expanded={false}
+                    truncatedEndingComponent={"... "}
+                  >
+                    <p className="text-xs">{project.description}</p>
+                    <div className="flex my-3 w-full justify-between">
+                      <a href={project.link}>
+                        <button
+                          className="px-2 text-xs dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
+                          onClick={() => router.push(`${project.link}`)}
+                        >
+                          visit site
+                        </button>
+                      </a>
+                      <a href={project.source}>
+                        <button
+                          className="px-2 text-xs dark:bg-gray-700 rounded-sm py-1 bg-gray-300"
+                          onClick={() => router.push(`${project.source}`)}
+                        >
+                          source code
+                        </button>
+                      </a>
+                    </div>
+                  </ShowMoreText>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
