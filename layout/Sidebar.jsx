@@ -5,12 +5,7 @@ const Sidebar = ({ menu, setMenu }) => {
   return (
     <div className="md:hidden absolute  top-0 right-0 left-0 dark:bg-[#11121E] h-screen w-full">
       <div className=" px-4 pt-24 w-full h-full  dark:bg-[#11121E] bg-white">
-        <div
-          style={{
-            fontFamily: "'Ranchers', cursive",
-          }}
-          className="text-4xl dark:text-yellow-500 cursor-pointer"
-        >
+        <div className="text-4xl font-Ranchers dark:text-sky-500 cursor-pointer">
           <Link href="/#">SUCCESS</Link>
         </div>
         <div

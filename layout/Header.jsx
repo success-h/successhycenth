@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import Sidebar from "./Sidebar";
 
 const Header = () => {
-  const genericHamburgerLine = `w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-300`;
+  const genericHamburgerLine = `w-7 my-[3px] rounded-full bg-black dark:bg-white transition ease transform duration-300`;
   const { systemTheme, theme, setTheme } = useTheme();
   const [menu, setMenu] = useState(false);
 
@@ -16,7 +16,7 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <BsSunFill
-          className="w-8 h-8 dark:text-yellow-500"
+          className="w-8 h-8 dark:text-sky-500"
           onClick={() => setTheme("light")}
         />
       );
@@ -29,18 +29,12 @@ const Header = () => {
   return (
     <>
       <div className="fixed hidden py-7 z-10 backdrop-blur-2xl dark:backdrop-blur-0 dark:bg-[#11121E]  bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
-        <div className="text-[30px] dark:text-yellow-500">
-          <Link href="/#">
-            <span
-              style={{
-                fontFamily: "'Ranchers', cursive",
-              }}
-              className="cursor-pointer"
-            >
-              SUCCESS
-            </span>
-          </Link>
-        </div>
+        <a
+          className="cursor-pointer font-Ranchers text-[30px] dark:text-sky-500"
+          href="/#"
+        >
+          SUCCESS
+        </a>
         <div className="flex text-[18px] dark:text-gray-200 gap-10">
           <a href="/#about">About</a>
           <a href="/#projects">Projects</a>

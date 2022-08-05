@@ -14,6 +14,9 @@ module.exports = {
           "0 45px 65px rgba(125, 0, 150, 0.15)",
         ],
       },
+      fontFamily: {
+        Ranchers: ["Ranchers"],
+      },
     },
   },
   plugins: [],

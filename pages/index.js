@@ -1,15 +1,28 @@
 import { DefaultSeo, NextSeo } from "next-seo";
 import Head from "next/head";
-import { About } from "../components/About";
-import Contact from "../components/Contact";
-import { Hero } from "../components/Hero";
-import Projects from "../components/Projects";
-import Stat from "../components/Stat";
-import Technology from "../components/Technology";
+
 import siteConfig from "../config/siteConfig";
 import { fetchData } from "../lib/FetchData";
+import dynamic from "next/dynamic";
 
-export const getStaticProps = async () => {
+const About = dynamic(
+  () => import("../components/About").then((mod) => mod.About),
+  { ssr: false }
+);
+const Contact = dynamic(() => import("../components/Contact"), { ssr: false });
+const Hero = dynamic(
+  () => import("../components/Hero").then((mod) => mod.Hero),
+  { ssr: false }
+);
+const Projects = dynamic(() => import("../components/Projects"), {
+  ssr: false,
+});
+const Stat = dynamic(() => import("../components/Stat"), { ssr: false });
+const Technology = dynamic(() => import("../components/Technology"), {
+  ssr: false,
+});
+
+export const getServerSideProps = async () => {
   const projects = await fetchData("projects");
   const about = await fetchData("about");
   const contact = await fetchData("contact");
@@ -21,7 +34,6 @@ export const getStaticProps = async () => {
       contact,
       technologies,
     },
-    revalidate: 60,
   };
 };
 

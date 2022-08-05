@@ -1,97 +1,40 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import ShowMoreText from "react-show-more-text";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import AOS from "aos";
 
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  hidden: {
-    y: 300,
-    opacity: 0,
-    transition: { duration: 0.7, ease: easing },
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
 const Projects = ({ projects }) => {
   const router = useRouter();
-  const control = useAnimation();
-  const [ref, inView] = useInView();
   useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
+    AOS.init({ duration: 2500 });
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={control}
-      transition={{ duration: 1.5, ease: easing }}
+    <div
       id="projects"
       className="max-w-[1440px] dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
     >
       <div className="mx-auto flex dark:text-gray-100 flex-col ">
-        <motion.span
-          initial="hidden"
-          variants={fadeInUp}
-          animate={control}
-          ref={ref}
-          transition={{
-            delay: 0.03,
-            duration: 0.8,
-            ease: easing,
-          }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <div
+          data-aos="zoom-in-up"
           className="text-3xl my-10 font-bold self-center mx-auto"
         >
           Projects
-        </motion.span>
-        <motion.div
-          initial="hidden"
-          variants={fadeInUp}
-          animate={control}
-          ref={ref}
-          transition={{
-            delay: 0.03,
-            duration: 0.8,
-            ease: easing,
-          }}
-          whileInView={{ opacity: 1, y: 0 }}
+        </div>
+        <div
+          data-aos="zoom-in-up"
           className="text-lg dark:text-gray-300  text-center self-center mx-auto"
         >
           Some opensource projects I have worked on in the past and currently.
-        </motion.div>
+        </div>
       </div>
       <div className="my-10">
         <div className="grid md:grid-cols-2 gap-14 px-3 sm:px-10 xl:grid-cols-3 justify-center">
           {projects.map((project, idx) => (
-            <motion.div
-              initial="hidden"
-              variants={fadeInUp}
-              animate={control}
-              ref={ref}
-              transition={{
-                delay: 0.03,
-                duration: 0.8,
-                ease: easing,
-              }}
-              whileInView={{ opacity: 1, y: 0 }}
-              key={project.name}
-            >
-              <div
-                key={idx}
-                className="sm:min-w-fit hover:shadow-lg border sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75"
-              >
+            <div data-aos="zoom-in-up" key={idx}>
+              <div className="sm:min-w-fit hover:shadow-lg border dark:border-gray-600 sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
                 <div className="h-[200px] rounded-xl grid">
                   <Image
                     src={project.image}
@@ -148,11 +91,11 @@ const Projects = ({ projects }) => {
                   </ShowMoreText>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -3,32 +3,13 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { BiBadgeCheck } from "react-icons/bi";
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  hidden: {
-    y: 200,
-    opacity: 0,
-    transition: { duration: 0.7, ease: easing },
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
+import AOS from "aos";
 
 export const About = ({ about }) => {
-  const control = useAnimation();
-  const [ref, inView] = useInView();
   useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    }
-  }, [control, inView]);
+    AOS.init({ duration: 2500 });
+    AOS.refresh();
+  }, []);
 
   return (
     <div
@@ -36,20 +17,14 @@ export const About = ({ about }) => {
       className="max-w-[1440px] bg-gray-200 dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
     >
       <div className="mx-auto flex  flex-col ">
-        <span className="text-3xl sm:mt-10 font-bold self-center dark:text-gray-200  mx-auto">
+        <span
+          data-aos="zoom-in-up"
+          className="text-3xl sm:mt-10 font-bold self-center dark:text-gray-200  mx-auto"
+        >
           About Me
         </span>
-        <motion.div
-          initial="hidden"
-          variants={fadeInUp}
-          animate={control}
-          ref={ref}
-          transition={{
-            delay: 0.1,
-            duration: 1,
-            ease: easing,
-          }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <div
+          data-aos="zoom-in-up"
           className="text-lg my-10 dark:text-gray-400 flex-col flex items-center justify-center mx-auto"
         >
           <motion.div className="sm:w-3/5 flex justify-center pl-4 mb-4">
@@ -88,24 +63,15 @@ export const About = ({ about }) => {
               Currently making progress at the Opensource community.
             </p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
       <motion.div className="mx-auto">
         <div className="flex flex-col md:flex-row">
-          {about.map((item) => {
+          {about?.map((item, index) => {
             return (
-              <motion.div
-                initial="hidden"
-                variants={fadeInUp}
-                animate={control}
-                ref={ref}
-                key={item.id}
-                transition={{
-                  delay: 0.03,
-                  duration: 0.8,
-                  ease: easing,
-                }}
-                whileInView={{ opacity: 1, y: 0 }}
+              <div
+                key={index}
+                data-aos="zoom-in-up"
                 className="flex dark:shadow-2xl py-6 px-5 flex-1 flex-col items-center gap-10"
               >
                 <motion.img
@@ -121,11 +87,14 @@ export const About = ({ about }) => {
                     {item.description}
                   </motion.div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-        <p className="text-sm sm:w-1/2 mx-auto text-center mt-10 text-start">
+        <p
+          data-aos="zoom-in-up"
+          className="text-sm sm:w-1/2 mx-auto text-center mt-10 text-start"
+        >
           I'm very excited to have you here. Feel free to reach out to me with
           any project ideas you have or to just say hello😄, I'm always happy to
           Help..
