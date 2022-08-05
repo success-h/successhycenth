@@ -15,10 +15,22 @@ export const Hero = () => {
         data-aos="zoom-in"
         className="grid max-w-[1440px] md:px-[100px] mx-auto items-center  md:grid-cols-2 mt-40 px-4 gap-11"
       >
-        <h1 className="text-[40px] text-center mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm md:text-start font-bold lg:text-[54px]">
-          Hi <span className="animate-bounce">👋</span> I’m Success Hycenth, I’m
-          a full-stack developer and a UI/UX Designer.
-        </h1>
+        <div className="grid">
+          <h1 className="text-[40px] sm:text-[40px] text-center sm:text-left mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm font-bold">
+            Hi <span className="animate-bounce">👋</span> I’m Success Hycenth
+            I’m a full-stack developer and a UI/UX Designer.
+          </h1>
+          <button className="justify-self-center mt-4 dark:bg-sky-500 sm:justify-self-start bg-gray-300 py-3 px-7 outline-none text-2xl font-medium hover:bg-emerald-400 active:bg-emerald-400 rounded-full">
+            <a
+              href="/SUCCESSCV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              My Resume
+            </a>
+          </button>
+        </div>
         <HeroSvg className="max-h-[345px] max-w-[470px] drop-shadow-xl" />
       </div>
     </div>
