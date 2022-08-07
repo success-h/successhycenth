@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { RiMoonFill } from "react-icons/ri";
 import { BsSunFill } from "react-icons/bs";
-import { IoReorderTwoOutline } from "react-icons/io5";
 import { useTheme } from "next-themes";
 import Sidebar from "./Sidebar";
 
@@ -41,7 +39,9 @@ const Header = () => {
           <a href="/#technologies">Technologies</a>
           <a href="/#contact">Contact</a>
         </div>
-        <div className="">{renderThemeChanger()}</div>
+        <div className="">
+          {renderThemeChanger ? renderThemeChanger() : null}
+        </div>
       </div>
 
       {/* small screen */}
