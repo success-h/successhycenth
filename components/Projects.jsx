@@ -7,7 +7,7 @@ import AOS from "aos";
 const Projects = ({ projects }) => {
   const router = useRouter();
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 2500 });
     AOS.refresh();
   }, []);
 

@@ -5,7 +5,7 @@ import AOS from "aos";
 
 export const Hero = () => {
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 2500 });
     AOS.refresh();
   }, []);
 

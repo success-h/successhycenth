@@ -7,7 +7,7 @@ import AOS from "aos";
 
 export const About = ({ about }) => {
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 2500 });
     AOS.refresh();
   }, []);
 
@@ -16,7 +16,7 @@ export const About = ({ about }) => {
       id="about"
       className="max-w-[1440px] bg-gray-200 dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
     >
-      <div className="mx-auto flex  flex-col ">
+      <div className="mx-auto flex  flex-col">
         <span
           data-aos="zoom-in-up"
           className="text-3xl sm:mt-10 font-bold self-center dark:text-gray-200  mx-auto"
