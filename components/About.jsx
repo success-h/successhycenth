@@ -31,7 +31,7 @@ export const About = ({ about }) => {
             <div className="text-black self-start dark:text-white">
               <BiBadgeCheck className="w-7 h-7 mr-3" />
             </div>
-            <p className="text-sm  text-start">
+            <p className="text-sm text-start">
               A passionate Software Developer with hands on experience in
               developing fast,beautiful and responsive web apps with leading &
               powerfull technologies.
@@ -77,14 +77,14 @@ export const About = ({ about }) => {
                 <motion.img
                   className="w-[200px] h-[200px]"
                   src={item?.icon}
-                  alt={item.name}
+                  alt={item?.name}
                 />
                 <div className="flex sm:w-3/5 md:w-full p-2 dark:text-gray-300 self-center flex-col">
                   <motion.div className="text-2xl text-center font-bold py-3">
-                    {item.title}
+                    {item?.title}
                   </motion.div>
                   <motion.div className="text-center">
-                    {item.description}
+                    {item?.description}
                   </motion.div>
                 </div>
               </div>
