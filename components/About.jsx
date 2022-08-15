@@ -7,7 +7,7 @@ import AOS from "aos";
 
 export const About = ({ about }) => {
   useEffect(() => {
-    AOS.init({ duration: 2500 });
+    AOS.init({ duration: 2000 });
     AOS.refresh();
   }, []);
 

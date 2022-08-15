@@ -26,7 +26,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="fixed hidden py-7 z-10 backdrop-blur-2xl dark:backdrop-blur-0 dark:bg-[#11121E]  bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
+      <div className="fixed hidden py-7 z-10 backdrop-blur-2xl dark:bg-[#11121e80]  bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
         <a
           className="cursor-pointer font-Ranchers text-[30px] dark:text-sky-500"
           href="/#"

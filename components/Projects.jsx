@@ -7,7 +7,7 @@ import AOS from "aos";
 const Projects = ({ projects }) => {
   const router = useRouter();
   useEffect(() => {
-    AOS.init({ duration: 2500 });
+    AOS.init({ duration: 2000 });
     AOS.refresh();
   }, []);
 
@@ -27,7 +27,7 @@ const Projects = ({ projects }) => {
           data-aos="zoom-in-up"
           className="text-lg dark:text-gray-300  text-center self-center mx-auto"
         >
-          Some opensource projects I have worked on in the past and currently.
+          Some projects I have worked on in the past and currently.
         </div>
       </div>
       <div className="my-10">
