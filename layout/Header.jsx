@@ -26,7 +26,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="fixed hidden py-7 z-10 backdrop-blur-2xl dark:bg-[#11121e80]  bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
+      <div className="fixed hidden border-gray-500 py-7 z-10 backdrop-blur-md bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
         <a
           className="cursor-pointer font-Ranchers text-[30px] dark:text-sky-500"
           href="/#"
@@ -45,7 +45,7 @@ const Header = () => {
       </div>
 
       {/* small screen */}
-      <div className="flex md:hidden z-10 py-5 px-4 items-center dark:backdrop-blur-0 dark:bg-[#11121E] justify-between fixed backdrop-blur-2xl top-0 left-0 right-0">
+      <div className="flex md:hidden z-10 py-5 px-4 items-center justify-between fixed backdrop-blur-md top-0 left-0 right-0">
         <div className="">{renderThemeChanger()}</div>
         <div className="z-10">
           {/* <IoReorderTwoOutline
@@ -71,7 +71,9 @@ const Header = () => {
                 height: "3px",
               }}
               className={`${genericHamburgerLine} ${
-                menu ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+                menu
+                  ? "opacity-0 translate-x-52"
+                  : "opacity-50 group-hover:opacity-100"
               }`}
             />
             <div
