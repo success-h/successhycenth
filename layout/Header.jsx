@@ -71,9 +71,7 @@ const Header = () => {
                 height: "3px",
               }}
               className={`${genericHamburgerLine} ${
-                menu
-                  ? "opacity-0 translate-x-52"
-                  : "opacity-50 group-hover:opacity-100"
+                menu ? "translate-x-52" : "opacity-50 group-hover:opacity-100"
               }`}
             />
             <div
