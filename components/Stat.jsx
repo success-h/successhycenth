@@ -17,6 +17,7 @@ const Stat = () => {
     AOS.init({ duration: 1400 });
     AOS.refresh();
   }, []);
+  console.log("data:", data);
 
   const arrayLength = data.length;
   return (

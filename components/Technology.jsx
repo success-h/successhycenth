@@ -42,10 +42,10 @@ const Technology = ({ technologies }) => {
               <div
                 data-aos="zoom-in-up"
                 key={id}
-                className="flex justify-center h-[170px] max-w-full flex-col  rounded-lg items-center hover:bg-gray-300  p-3   bg-gray-200 dark:hover:bg-[#101215] dark:bg-[#101215]"
+                className="flex justify-center h-[170px] max-w-full flex-col  rounded-lg items-center hover:bg-gray-300  p-3   bg-gray-200 dark:hover:bg-[#181b1f] dark:bg-[#101215]"
               >
                 {icon && <Image height={90} width={90} src={icon} alt={name} />}
-                <span className="text-md dark:text-gray-200  py-2">{name}</span>
+                <span className="text-md dark:text-gray-200 py-2">{name}</span>
               </div>
             </a>
           );
