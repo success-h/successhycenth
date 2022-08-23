@@ -66,13 +66,13 @@ export const About = ({ about }) => {
         </div>
       </div>
       <motion.div className="mx-auto">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col items-center lg:flex-row">
           {about?.map((item, index) => {
             return (
               <div
                 key={index}
                 data-aos="zoom-in-up"
-                className="flex dark:shadow-2xl py-6 px-5 flex-1 flex-col items-center gap-10"
+                className="flex dark:shadow-xl dark:shadow-gray-800 m-4 max-w-xl py-6 px-5 flex-1 flex-col items-center gap-10"
               >
                 <motion.img
                   className="w-[200px] h-[200px]"

@@ -48,10 +48,6 @@ const Header = () => {
       <div className="flex md:hidden z-10 py-5 px-4 items-center justify-between fixed backdrop-blur-md top-0 left-0 right-0">
         <div className="">{renderThemeChanger()}</div>
         <div className="z-10">
-          {/* <IoReorderTwoOutline
-            onClick={() => setMenu(!menu)}
-            className="text-3xl dark:text-gray-200"
-          /> */}
           <div
             className={`flex flex-col h-9 w-9 rounded justify-center items-center`}
             onClick={() => setMenu(!menu)}

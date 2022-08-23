@@ -34,7 +34,7 @@ const Projects = ({ projects }) => {
         <div className="grid md:grid-cols-2 gap-14 px-3 sm:px-10 xl:grid-cols-3 justify-center">
           {projects.map((project, idx) => (
             <div data-aos="zoom-in-up" key={idx}>
-              <div className="sm:min-w-fit hover:shadow-lg border dark:border-gray-600 sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
+              <div className="sm:min-w-fit hover:shadow-lg border dark:shadow-2xl dark:shadow-gray-800 dark:border-gray-800 sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
                 <div className="h-[200px] rounded-xl grid">
                   <Image
                     src={project.image}

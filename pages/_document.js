@@ -9,7 +9,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="dark:bg-[#12131d]">
+      <body className="dark:bg-[#000000]">
         <Main />
         <NextScript />
       </body>
