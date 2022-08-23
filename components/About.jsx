@@ -72,7 +72,7 @@ export const About = ({ about }) => {
               <div
                 key={index}
                 data-aos="zoom-in-up"
-                className="flex dark:shadow-xl dark:shadow-gray-800 m-4 max-w-xl py-6 px-5 flex-1 flex-col items-center gap-10"
+                className="flex dark:shadow-sm dark:shadow-gray-900 dark:hover:border rounded-lg border-gray-700 m-4 max-w-xl py-6 px-5 flex-1 flex-col items-center gap-10"
               >
                 <motion.img
                   className="w-[200px] h-[200px]"
