@@ -10,7 +10,7 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
 
   const renderThemeChanger = () => {
-    const currentTheme = theme === "system" ? "light" : theme;
+    const currentTheme = theme === "system" ? theme : theme;
     if (currentTheme === "dark") {
       return (
         <BsSunFill
