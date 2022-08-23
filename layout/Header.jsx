@@ -11,6 +11,7 @@ const Header = () => {
 
   const renderThemeChanger = () => {
     const currentTheme = theme === "system" ? theme : theme;
+    console.log("currenttheme", currentTheme);
     if (currentTheme === "dark") {
       return (
         <BsSunFill

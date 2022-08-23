@@ -17,8 +17,8 @@ export const Hero = () => {
       >
         <div className="grid">
           <h1 className="text-[35px] sm:text-[40px] text-center sm:text-left mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm font-bold">
-            Hi <span className="animate-bounce">👋</span>I am Success Hycenth,
-            I’m a full-stack developer and a UI/UX Designer.
+            Hi <span className="animate-bounce">👋</span>I am Success Hycenth, a
+            full-stack developer and a UI/UX Designer.
           </h1>
           <button className="justify-self-center mt-4 dark:bg-sky-500 sm:justify-self-start bg-gray-300 py-3 px-7 outline-none text-2xl font-medium hover:bg-emerald-400 active:bg-emerald-400 rounded-full">
             <a
