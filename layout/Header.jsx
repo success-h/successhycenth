@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import Sidebar from "./Sidebar";
 
 const Header = () => {
-  const genericHamburgerLine = `w-7 my-[3px]  rounded-full bg-black dark:bg-white transition ease transform duration-300`;
+  const genericHamburgerLine = `w-7 my-[3px] rounded-full bg-black dark:bg-white transition ease transform duration-300`;
   const { systemTheme, theme, setTheme } = useTheme();
   const [menu, setMenu] = useState(false);
 
@@ -68,7 +68,7 @@ const Header = () => {
               }}
               className={`${genericHamburgerLine} ${
                 menu
-                  ? "-translate-x-96 transition-all duration-700 opacity-0"
+                  ? "-translate-x-96 transition-all opacity-0"
                   : "opacity-100 group-hover:opacity-100"
               }`}
             />
