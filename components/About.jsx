@@ -4,8 +4,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { BiBadgeCheck } from "react-icons/bi";
 import AOS from "aos";
+import { AboutData } from "./DATA";
 
-export const About = ({ about }) => {
+export const About = () => {
   useEffect(() => {
     AOS.init({ duration: 2500 });
     AOS.refresh();
@@ -14,7 +15,7 @@ export const About = ({ about }) => {
   return (
     <div
       id="about"
-      className="max-w-[1440px] bg-gray-200 dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
+      className="max-w-[1440px] bg-stone-100 rounded-lg dark:bg-inherit  py-20 mx-auto md:px-[100px] px-4"
     >
       <div className="mx-auto flex  flex-col">
         <span
@@ -67,17 +68,17 @@ export const About = ({ about }) => {
       </div>
       <motion.div className="mx-auto">
         <div className="flex flex-col items-center lg:flex-row">
-          {about?.map((item, index) => {
+          {AboutData?.map((item) => {
             return (
               <div
-                key={index}
+                key={item.id}
                 data-aos="zoom-in-up"
                 className="flex dark:shadow-sm dark:shadow-gray-900 dark:hover:border rounded-lg border-gray-700 m-4 max-w-xl py-6 px-5 flex-1 flex-col items-center gap-10"
               >
                 <motion.img
                   className="w-[200px] h-[200px]"
-                  src={item?.icon}
-                  alt={item?.name}
+                  src={item.icon}
+                  alt={item.title}
                 />
                 <div className="flex sm:w-3/5 md:w-full p-2 dark:text-gray-300 self-center flex-col">
                   <motion.div className="text-2xl text-center font-bold py-3">

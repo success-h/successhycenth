@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import AOS from "aos";
+import { TechData } from "./DATA";
 
 const Technology = ({ technologies }) => {
   useEffect(() => {
@@ -36,7 +37,7 @@ const Technology = ({ technologies }) => {
         </div>
       </div>
       <div className="grid sm:grid-rows-3 grid-rows-6 grid-flow-col gap-2   mt-10">
-        {technologies.map(({ url, id, icon, name }) => {
+        {TechData?.map(({ url, id, icon, title }) => {
           return (
             <a href={url} key={id}>
               <div
@@ -44,8 +45,10 @@ const Technology = ({ technologies }) => {
                 key={id}
                 className="flex justify-center h-[170px] max-w-full flex-col  rounded-lg items-center hover:bg-gray-300  p-3   bg-gray-200 dark:hover:bg-[#181b1f] dark:bg-[#101215]"
               >
-                {icon && <Image height={90} width={90} src={icon} alt={name} />}
-                <span className="text-md dark:text-gray-200 py-2">{name}</span>
+                {icon && (
+                  <Image height={90} width={110} src={icon} alt={title} />
+                )}
+                <span className="text-md dark:text-gray-200 py-2">{title}</span>
               </div>
             </a>
           );

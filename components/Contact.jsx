@@ -27,7 +27,7 @@ const Contact = ({ contact }) => {
         </span>
       </div>
       <div className="py-10 flex gap-2 items-center justify-center">
-        {contact.map((item) => (
+        {contact?.map((item) => (
           <a
             data-aos="zoom-in-up"
             href={item.link}

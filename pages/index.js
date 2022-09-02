@@ -22,20 +22,22 @@ const Technology = dynamic(() => import("../components/Technology"), {
   ssr: false,
 });
 
-export const getServerSideProps = async () => {
-  const projects = await fetchData("projects");
-  const about = await fetchData("about");
-  const contact = await fetchData("contact");
-  const technologies = await fetchData("technologies");
-  return {
-    props: {
-      projects,
-      about,
-      contact,
-      technologies,
-    },
-  };
-};
+// export const getServerSideProps = async () => {
+//   const projects = await fetchData("projects");
+//   const about = await fetchData("about");
+//   const contact = await fetchData("contact");
+//   const technologies = await fetchData("technologies");
+//   if (projects && about && contact && technologies) {
+//     return {
+//       props: {
+//         projects,
+//         about,
+//         contact,
+//         technologies,
+//       },
+//     };
+//   }
+// };
 
 export default function Home({ projects, about, contact, technologies }) {
   return (
