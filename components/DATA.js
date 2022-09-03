@@ -163,7 +163,7 @@ export const TechData = [
     id: 4,
     url: "https://www.djangoproject.com/",
     icon: "/tech/django.png",
-    title: "Django &RestAPIs",
+    title: "DjangoAPIs",
   },
   {
     id: 5,
