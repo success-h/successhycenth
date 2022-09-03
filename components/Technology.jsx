@@ -46,7 +46,7 @@ const Technology = ({ technologies }) => {
                 className="flex justify-center h-[170px] max-w-full flex-col  rounded-lg items-center hover:bg-gray-300  p-3   bg-gray-200 dark:hover:bg-[#181b1f] dark:bg-[#101215]"
               >
                 {icon && (
-                  <Image height={90} width={110} src={icon} alt={title} />
+                  <Image height={90} width={95} src={icon} alt={title} />
                 )}
                 <span className="text-md dark:text-gray-200 py-2">{title}</span>
               </div>

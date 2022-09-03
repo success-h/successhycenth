@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import AOS from "aos";
+import { ContactData } from "./DATA";
 
 const Contact = ({ contact }) => {
   useEffect(() => {
@@ -27,18 +28,18 @@ const Contact = ({ contact }) => {
         </span>
       </div>
       <div className="py-10 flex gap-2 items-center justify-center">
-        {contact?.map((item) => (
+        {ContactData?.map((item) => (
           <a
             data-aos="zoom-in-up"
             href={item.link}
             key={item.id}
-            className="mx-2"
+            className="mx-2 cursor-pointer"
           >
             <div className="bg-gray-300 p-2 dark:bg-gray-500 rounded-full flex items-center justify-center">
               <Image
                 height={30}
                 width={30}
-                src={item?.icon}
+                src={item.icon}
                 alt="icons"
                 priority
               />
