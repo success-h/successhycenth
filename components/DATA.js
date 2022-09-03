@@ -199,7 +199,7 @@ export const TechData = [
     id: 10,
     url: "https://www.javascript.com/",
     icon: "/tech/js.png",
-    title: "javaScript",
+    title: "JavaScript",
   },
   {
     id: 11,
