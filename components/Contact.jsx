@@ -35,7 +35,7 @@ const Contact = ({ contact }) => {
             key={item.id}
             className="mx-2 cursor-pointer"
           >
-            <div className="bg-gray-300 p-2 dark:bg-gray-500 rounded-full flex items-center justify-center">
+            <div className="bg-gray-300 dark:bg-gray-800 p-2 rounded-full flex items-center justify-center">
               <Image
                 height={30}
                 width={30}
