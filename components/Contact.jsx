@@ -31,7 +31,7 @@ const Contact = ({ contact }) => {
         {ContactData?.map((item) => (
           <a
             data-aos="zoom-in-up"
-            href={item.link}
+            href={item.url}
             key={item.id}
             className="mx-2 cursor-pointer"
           >
