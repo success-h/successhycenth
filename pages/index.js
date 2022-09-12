@@ -2,7 +2,6 @@ import { DefaultSeo, NextSeo } from "next-seo";
 import Head from "next/head";
 
 import siteConfig from "../config/siteConfig";
-import { fetchData } from "../lib/FetchData";
 import dynamic from "next/dynamic";
 
 const About = dynamic(
@@ -21,23 +20,6 @@ const Stat = dynamic(() => import("../components/Stat"), { ssr: false });
 const Technology = dynamic(() => import("../components/Technology"), {
   ssr: false,
 });
-
-// export const getServerSideProps = async () => {
-//   const projects = await fetchData("projects");
-//   const about = await fetchData("about");
-//   const contact = await fetchData("contact");
-//   const technologies = await fetchData("technologies");
-//   if (projects && about && contact && technologies) {
-//     return {
-//       props: {
-//         projects,
-//         about,
-//         contact,
-//         technologies,
-//       },
-//     };
-//   }
-// };
 
 export default function Home({ projects, about, contact, technologies }) {
   return (
