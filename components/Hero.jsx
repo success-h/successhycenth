@@ -16,7 +16,7 @@ export const Hero = () => {
         className="grid max-w-[1440px] md:px-[100px] mx-auto items-center  md:grid-cols-2 mt-40 px-4 gap-11"
       >
         <div className="grid">
-          <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-sans text-[45px] sm:text-[60px] text-center sm:text-left mb-3 text-[#0d0824] leading-tight font-bold">
+          <h1 className="font-black text-transparent text-[60px] bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:text-[60px] font-sans text-center sm:text-left mb-3 leading-tight">
             Hi I am Success Hycenth.
           </h1>
           <p className="text-[20px] sm:text- mt-4 text-center sm:text-left mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm font-mono">
