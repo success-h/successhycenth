@@ -14,7 +14,7 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <BsSunFill
-          className="w-8 h-8 dark:text-sky-500"
+          className="w-8 h-8 dark:text-pink-400"
           onClick={() => setTheme("light")}
         />
       );
