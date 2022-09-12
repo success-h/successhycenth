@@ -11,7 +11,7 @@ const Sidebar = ({ menu, setMenu }) => {
           menu ? "translate-x-32 " : "translate-x-full"
         }`}
       >
-        <div className="text-4xl font-Ranchers dark:text-sky-500 cursor-pointer">
+        <div className="text-4xl font-Ranchers dark:text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600 cursor-pointer">
           <Link href="/#">SUCCESS</Link>
         </div>
         <div
