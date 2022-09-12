@@ -28,7 +28,7 @@ const Header = () => {
     <>
       <div className="fixed hidden py-7 z-10 backdrop-blur-md bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
         <a
-          className="cursor-pointer font-Ranchers text-[30px] dark:text-sky-500"
+          className="cursor-pointer font-Ranchers text-[30px] dark:text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600"
           href="/#"
         >
           SUCCESS
