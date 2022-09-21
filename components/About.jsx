@@ -34,7 +34,7 @@ export const About = () => {
             </div>
             <p className="text-sm text-start">
               A passionate Software Developer with hands on experience in
-              developing fast,beautiful and responsive web apps with leading &
+              developing fast, beautiful and responsive web apps with leading &
               powerfull technologies.
             </p>
           </motion.div>
@@ -52,8 +52,8 @@ export const About = () => {
               <BiBadgeCheck className="w-7 h-7 mr-3" />
             </div>
             <p className="text-sm  text-start">
-              A Developer with knowledge and expenrence with Search Engine
-              OptimizatioO(SEO), and beautiful UI/UX designer.
+              A Developer with knowledge of Search Engine Optimization(SEO), and
+              beautiful UI/UX designer.
             </p>
           </motion.div>
           <motion.div className="sm:w-3/5 flex mb-4 pl-4">
