@@ -11,7 +11,7 @@ export const AboutData = [
     title: "Develop",
     icon: "/developer.svg",
     description:
-      "With modern technologies, I will help you developer your fast dream apps from start to finish in no time and ensure your satisfactions.",
+      "With modern technologies, I will help you develope your fast dream apps from start to finish in no time and ensure your satisfactions.",
   },
   {
     id: 3,
