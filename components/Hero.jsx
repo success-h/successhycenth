@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
 import HeroSvg from "./HeroSvg";
-import { motion } from "framer-motion";
-import AOS from "aos";
 
 export const Hero = () => {
-  useEffect(() => {
-    AOS.init({ duration: 2500 });
-    AOS.refresh();
-  }, []);
-
   return (
     <div>
       <div
