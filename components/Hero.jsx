@@ -4,10 +4,7 @@ import HeroSvg from "./HeroSvg";
 export const Hero = () => {
   return (
     <div>
-      <div
-        data-aos="zoom-in"
-        className="grid max-w-[1440px] md:px-[100px] mx-auto items-center  md:grid-cols-2 mt-40 px-4 gap-11"
-      >
+      <div className="grid max-w-[1440px] md:px-[100px] mx-auto items-center  md:grid-cols-2 mt-40 px-4 gap-11">
         <div className="grid">
           <h1 className="font-black text-transparent text-[60px] bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600 sm:text-[60px] font-sans text-center sm:text-left mb-3 leading-tight">
             Hi, I am Success Hycenth.
