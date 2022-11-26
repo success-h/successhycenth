@@ -6,10 +6,10 @@ export const Hero = () => {
     <div>
       <div className="grid max-w-[1440px] md:px-[100px] mx-auto items-center  md:grid-cols-2 mt-40 px-4 gap-11">
         <div className="grid">
-          <h1 className="font-black text-transparent text-[50px] bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600 sm:text-[50px] font-sans text-center sm:text-left mb-3 leading-tight">
+          <h1 className="font-black text-transparent text-[60px] bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600 font-sans text-center sm:text-left mb-3 leading-tight">
             Hi, I am Success Hycenth.
           </h1>
-          <p className="text-[30px] sm:text- mt-4 text-center sm:text-left mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm font-mono">
+          <p className="text-[20px] sm:text- mt-4 text-center sm:text-left mb-3 text-[#0d0824] leading-tight dark:text-gray-300 drop-shadow-3xl dark:drop-shadow-sm font-mono">
             An innovative Frontend Mobile/Web React Engineer, a connoisseur in
             building amazing user interfaces with React, and UI/UX Designer.
           </p>
