@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaGithubAlt } from 'react-icons/fa';
 import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
-import AOS from 'aos';
 
 const Stat = () => {
   const [data, setData] = React.useState([]);
@@ -12,8 +11,6 @@ const Stat = () => {
       setData(data);
     })();
   }, []);
-
-  console.log('data:', data);
 
   const arrayLength = data.length;
   return (

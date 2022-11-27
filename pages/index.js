@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import siteConfig from '../config/siteConfig';
 import dynamic from 'next/dynamic';
+import AOS from 'aos';
 
 const About = dynamic(
   () => import('../components/About').then((mod) => mod.About),
