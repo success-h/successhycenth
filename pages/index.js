@@ -1,27 +1,31 @@
-import { DefaultSeo, NextSeo } from "next-seo";
-import Head from "next/head";
+import { DefaultSeo, NextSeo } from 'next-seo';
+import Head from 'next/head';
 
-import siteConfig from "../config/siteConfig";
-import dynamic from "next/dynamic";
+import siteConfig from '../config/siteConfig';
+import dynamic from 'next/dynamic';
 
 const About = dynamic(
-  () => import("../components/About").then((mod) => mod.About),
+  () => import('../components/About').then((mod) => mod.About),
   { ssr: false }
 );
-const Contact = dynamic(() => import("../components/Contact"), { ssr: false });
+const Contact = dynamic(() => import('../components/Contact'), { ssr: false });
 const Hero = dynamic(
-  () => import("../components/Hero").then((mod) => mod.Hero),
+  () => import('../components/Hero').then((mod) => mod.Hero),
   { ssr: false }
 );
-const Projects = dynamic(() => import("../components/Projects"), {
+const Projects = dynamic(() => import('../components/Projects'), {
   ssr: false,
 });
-const Stat = dynamic(() => import("../components/Stat"), { ssr: false });
-const Technology = dynamic(() => import("../components/Technology"), {
+const Stat = dynamic(() => import('../components/Stat'), { ssr: false });
+const Technology = dynamic(() => import('../components/Technology'), {
   ssr: false,
 });
 
 export default function Home({ projects, about, contact, technologies }) {
+  useEffect(() => {
+    AOS.init({ duration: 1000, asing: 'ease-out-cubic' });
+    AOS.refresh();
+  }, []);
   return (
     <div className="scroll-smooth">
       <Head>
