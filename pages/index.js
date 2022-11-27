@@ -1,6 +1,6 @@
 import { DefaultSeo, NextSeo } from 'next-seo';
 import Head from 'next/head';
-
+import { useEffect } from 'react';
 import siteConfig from '../config/siteConfig';
 import dynamic from 'next/dynamic';
 
