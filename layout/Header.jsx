@@ -1,29 +1,15 @@
-import React, { useState } from "react";
-import { RiMoonFill } from "react-icons/ri";
-import { BsSunFill } from "react-icons/bs";
-import { useTheme } from "next-themes";
-import Sidebar from "./Sidebar";
+import React, { useState } from 'react';
+import { RiMoonFill } from 'react-icons/ri';
+import { BsSunFill } from 'react-icons/bs';
+import { useTheme } from 'next-themes';
+import Sidebar from './Sidebar';
 
 const Header = () => {
   const genericHamburgerLine = `w-7 my-[3px] rounded-full bg-black dark:bg-white transition ease transform duration-300`;
   const { systemTheme, theme, setTheme } = useTheme();
   const [menu, setMenu] = useState(false);
+  const currentTheme = theme === 'system' ? theme : theme;
 
-  const renderThemeChanger = () => {
-    const currentTheme = theme === "system" ? theme : theme;
-    if (currentTheme === "dark") {
-      return (
-        <BsSunFill
-          className="w-8 h-8 dark:text-pink-400"
-          onClick={() => setTheme("light")}
-        />
-      );
-    } else {
-      return (
-        <RiMoonFill className="w-7 h-7" onClick={() => setTheme("dark")} />
-      );
-    }
-  };
   return (
     <>
       <div className="fixed hidden py-7 z-10 backdrop-blur-md bg-opacity-5 md:flex  top-0 left-0 right-0 justify-between items-center px-[100px]  mx-auto text-gray-800 dark:text-gray-100">
@@ -40,13 +26,29 @@ const Header = () => {
           <a href="/#contact">Contact</a>
         </div>
         <div className="">
-          {renderThemeChanger ? renderThemeChanger() : null}
+          {currentTheme === 'dark' ? (
+            <BsSunFill
+              className="w-8 h-8 dark:text-pink-400"
+              onClick={() => setTheme('light')}
+            />
+          ) : (
+            <RiMoonFill className="w-7 h-7" onClick={() => setTheme('dark')} />
+          )}
         </div>
       </div>
 
       {/* small screen */}
       <div className="flex md:hidden z-10 py-5 px-4 items-center justify-between fixed backdrop-blur-md top-0 left-0 right-0">
-        <div className="">{renderThemeChanger()}</div>
+        <div className="">
+          {currentTheme === 'dark' ? (
+            <BsSunFill
+              className="w-8 h-8 dark:text-pink-400"
+              onClick={() => setTheme('light')}
+            />
+          ) : (
+            <RiMoonFill className="w-7 h-7" onClick={() => setTheme('dark')} />
+          )}
+        </div>
         <div className="z-10">
           <div
             className={`flex flex-col h-9 w-9 rounded justify-center items-center`}
@@ -54,32 +56,32 @@ const Header = () => {
           >
             <div
               style={{
-                height: "3px",
+                height: '3px',
               }}
               className={`${genericHamburgerLine} ${
                 menu
-                  ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
-                  : "opacity-100 group-hover:opacity-100"
+                  ? 'rotate-45 translate-y-3 opacity-50 group-hover:opacity-100'
+                  : 'opacity-100 group-hover:opacity-100'
               }`}
             />
             <div
               style={{
-                height: "3px",
+                height: '3px',
               }}
               className={`${genericHamburgerLine} ${
                 menu
-                  ? "-translate-x-96 transition-all opacity-0"
-                  : "opacity-100 group-hover:opacity-100"
+                  ? '-translate-x-96 transition-all opacity-0'
+                  : 'opacity-100 group-hover:opacity-100'
               }`}
             />
             <div
               style={{
-                height: "3px",
+                height: '3px',
               }}
               className={`${genericHamburgerLine} ${
                 menu
-                  ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
-                  : "opacity-100 group-hover:opacity-100"
+                  ? '-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100'
+                  : 'opacity-100 group-hover:opacity-100'
               }`}
             />
           </div>
