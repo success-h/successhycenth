@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
-import AOS from "aos";
-import { ContactData } from "./DATA";
+import React, { useEffect } from 'react';
+import Image from 'next/image';
+import AOS from 'aos';
+import { ContactData } from './DATA';
 
 const Contact = ({ contact }) => {
-  useEffect(() => {
-    AOS.init({ duration: 2500 });
-    AOS.refresh();
-  }, []);
   return (
     <div
       id="contact"

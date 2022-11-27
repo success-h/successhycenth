@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
-import ShowMoreText from "react-show-more-text";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import AOS from "aos";
-import { ProjectData } from "./DATA";
+import React, { useEffect } from 'react';
+import ShowMoreText from 'react-show-more-text';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import AOS from 'aos';
+import { ProjectData } from './DATA';
 
 const Projects = () => {
   const router = useRouter();
-  useEffect(() => {
-    AOS.init({ duration: 2500 });
-    AOS.refresh();
-  }, []);
 
   return (
     <div
@@ -68,7 +64,7 @@ const Projects = () => {
                     className="content-css"
                     anchorClass="my-anchor-css-class"
                     expanded={false}
-                    truncatedEndingComponent={"... "}
+                    truncatedEndingComponent={'... '}
                   >
                     <p className="text-xs">{project.description}</p>
                     <div className="flex my-3 w-full justify-between">

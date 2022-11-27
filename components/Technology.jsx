@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-import AOS from "aos";
-import { TechData } from "./DATA";
+import React, { useEffect } from 'react';
+import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion';
+import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+import { TechData } from './DATA';
 
-const Technology = ({ technologies }) => {
-  useEffect(() => {
-    AOS.init({ duration: 2500 });
-    AOS.refresh();
-  }, []);
-
+const Technology = () => {
   return (
     <div
       id="technologies"
@@ -33,7 +28,7 @@ const Technology = ({ technologies }) => {
           <br />
           <em className="text-xs">
             This website is powered Nextjs | DjangoRestFramework | Tailwinds
-          </em>{" "}
+          </em>{' '}
         </div>
       </div>
       <div className="grid sm:grid-rows-3 grid-rows-6 grid-flow-col gap-2   mt-10">

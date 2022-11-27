@@ -1,17 +1,12 @@
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { BiBadgeCheck } from "react-icons/bi";
-import AOS from "aos";
-import { AboutData } from "./DATA";
+import Image from 'next/image';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { BiBadgeCheck } from 'react-icons/bi';
+import AOS from 'aos';
+import { AboutData } from './DATA';
 
 export const About = () => {
-  useEffect(() => {
-    AOS.init({ duration: 2500 });
-    AOS.refresh();
-  }, []);
-
   return (
     <div
       id="about"

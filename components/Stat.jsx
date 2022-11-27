@@ -1,23 +1,19 @@
-import React, { useEffect } from "react";
-import { FaGithubAlt } from "react-icons/fa";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import AOS from "aos";
+import React, { useEffect } from 'react';
+import { FaGithubAlt } from 'react-icons/fa';
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
+import AOS from 'aos';
 
 const Stat = () => {
   const [data, setData] = React.useState([]);
   useEffect(() => {
     (async () => {
-      const res = await fetch("https://api.github.com/users/success-h/repos");
+      const res = await fetch('https://api.github.com/users/success-h/repos');
       const data = await res.json();
       setData(data);
     })();
   }, []);
 
-  useEffect(() => {
-    AOS.init({ duration: 1400 });
-    AOS.refresh();
-  }, []);
-  console.log("data:", data);
+  console.log('data:', data);
 
   const arrayLength = data.length;
   return (
