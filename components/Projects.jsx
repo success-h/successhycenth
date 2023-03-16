@@ -37,7 +37,7 @@ const Projects = () => {
               key={project.id}
               className="cursor-pointer"
             >
-              <div className="hover:shadow-lg border dark:shadow-2xl dark:shadow-gray-800 dark:border-gray-800  bg-slate-200 flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
+              <div className="hover:border-blue-400 border dark:shadow-2xl dark:shadow-gray-800 dark:border-gray-800 dark:bg-gray-900 bg-gray-200 flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
                 <div className="h-[250px] rounded-xl grid">
                   <Image
                     src={project.image}
