@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import Image from 'next/image';
-import AOS from 'aos';
-import { ContactData } from './DATA';
+import React, { useEffect } from "react";
+import Image from "next/image";
+import AOS from "aos";
+import { ContactData } from "./DATA";
 
 const Contact = ({ contact }) => {
   return (
@@ -23,7 +23,7 @@ const Contact = ({ contact }) => {
           Lets connect and work together on your next project.
         </span>
       </div>
-      <div className="py-10 flex gap-2 items-center justify-center">
+      <div className="py-10 flex mb-40 gap-2 items-center justify-center">
         {ContactData?.map((item) => (
           <a
             data-aos="zoom-in-up"

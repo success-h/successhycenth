@@ -28,7 +28,7 @@ export const ProjectData = [
     title: "Naeme",
     image: "/naeme.png",
     description:
-      "Naeme is a startup ticket booking company for events, Some features includes qrcode, payments, and social authentication",
+      "Naeme is an all-in-one solution for managing events. It involves a web and a Mobile app, Some features includes qrcode, payments, and social authentication",
     tags: [
       {
         name: "#NEXTJS",
@@ -66,7 +66,7 @@ export const ProjectData = [
         id: 3,
       },
     ],
-    link: "https://crwn-clothing-navy-ten.vercel.app/",
+    link: "https://crowns-cloting.netlify.app/",
     source: "https://github.com/success-h/crown-clothing",
   },
   {

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import ShowMoreText from 'react-show-more-text';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import AOS from 'aos';
-import { ProjectData } from './DATA';
+import React, { useEffect } from "react";
+import ShowMoreText from "react-show-more-text";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import AOS from "aos";
+import { ProjectData } from "./DATA";
+import Link from "next/link";
 
 const Projects = () => {
   const router = useRouter();
@@ -28,14 +29,19 @@ const Projects = () => {
         </div>
       </div>
       <div className="my-10">
-        <div className="grid md:grid-cols-2 gap-14 px-3 sm:px-10 xl:grid-cols-3 justify-center">
+        <div className="grid lg:grid-cols-2 gap-14 px-3 sm:px-10 xl:grid-cols-2 justify-center">
           {ProjectData?.map((project) => (
-            <div data-aos="zoom-in-up" key={project.id}>
-              <div className="sm:min-w-fit hover:shadow-lg border dark:shadow-2xl dark:shadow-gray-800 dark:border-gray-800 sm:max-w-fit flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
-                <div className="h-[200px] rounded-xl grid">
+            <Link
+              href={project.link}
+              data-aos="zoom-in-up"
+              key={project.id}
+              className="cursor-pointer"
+            >
+              <div className="hover:shadow-lg border dark:shadow-2xl dark:shadow-gray-800 dark:border-gray-800  bg-slate-200 flex flex-col overflow-hidden rounded-lg transition ease-in-out delay-75">
+                <div className="h-[250px] rounded-xl grid">
                   <Image
                     src={project.image}
-                    height={200}
+                    height={400}
                     width={400}
                     objectFit="cover"
                     className="hover:scale-110 transition ease-in-out duration-300 transform cursor-pointer"
@@ -64,31 +70,31 @@ const Projects = () => {
                     className="content-css"
                     anchorClass="my-anchor-css-class"
                     expanded={false}
-                    truncatedEndingComponent={'... '}
+                    truncatedEndingComponent={"... "}
                   >
                     <p className="text-xs">{project.description}</p>
-                    <div className="flex my-3 w-full justify-between">
-                      <a href={project.link}>
-                        <button
-                          className="px-2 text-xs dark:bg-sky-700 rounded-sm py-1 bg-gray-300"
-                          onClick={() => router.push(`${project.link}`)}
-                        >
-                          visit site
-                        </button>
-                      </a>
-                      <a href={project.source}>
-                        <button
-                          className="px-2 text-xs dark:bg-sky-700 rounded-sm py-1 bg-gray-300"
-                          onClick={() => router.push(`${project.source}`)}
-                        >
-                          source code
-                        </button>
-                      </a>
-                    </div>
                   </ShowMoreText>
+                  <div className="flex my-3 w-full justify-between">
+                    <a href={project.link}>
+                      <button
+                        className="px-2 text-xs dark:bg-sky-700 rounded-sm py-1 bg-gray-300"
+                        onClick={() => router.push(`${project.link}`)}
+                      >
+                        visit site
+                      </button>
+                    </a>
+                    <a href={project.source}>
+                      <button
+                        className="px-2 text-xs dark:bg-sky-700 rounded-sm py-1 bg-gray-300"
+                        onClick={() => router.push(`${project.source}`)}
+                      >
+                        source code
+                      </button>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
