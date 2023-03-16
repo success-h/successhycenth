@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import HeroSvg from './HeroSvg';
+import React, { useEffect } from "react";
+import HeroSvg from "./HeroSvg";
 
 export const Hero = () => {
   return (
@@ -15,7 +15,7 @@ export const Hero = () => {
           </p>
           <button className="justify-self-center mt-4 dark:bg-sky-500 sm:justify-self-start bg-gray-300 py-2 px-7 outline-none text-2xl font-medium hover:bg-emerald-400 active:bg-emerald-400 rounded-full">
             <a
-              href="/Success-Resume.pdf"
+              href="SuccessHycenth-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download
